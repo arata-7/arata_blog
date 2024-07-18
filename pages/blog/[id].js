@@ -6,7 +6,8 @@ export default function BlogId({ blog }) {
   return (
     <main className={styles.main}>
       <h1 className={styles.title}>{blog.title}</h1>
-      <p className={styles.puplishedAt}>{blog.publishedAt}</p>
+      <p className={styles.publishedAt}>{blog.publishedAt}</p>
+      <p> {blog.category && blog.category.name}</p>
       <div
         className={styles.post}
         dangerouslySetInnerHTML={{
