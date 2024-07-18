@@ -1,14 +1,14 @@
 // pages/blog/[id].js
 import { client } from "../../libs/client";
-import styles from "../../styles/Home.module.css"
+import styles from "../../styles/Home.module.scss"
 
 export default function BlogId({ blog }) {
   return (
     <main>
-      <h1>{blog.title}</h1>
-      <p>{blog.publishedAt}</p>
+      <h1 className={styles.title}>{blog.title}</h1>
+      <p className={styles.puplishedAt}>{blog.publishedAt}</p>
       <div
-        className={styles.text}
+        className={styles.post}
         dangerouslySetInnerHTML={{
           __html: `${blog.body}`,
         }}
