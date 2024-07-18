@@ -100,6 +100,12 @@ a {
   text-decoration: none;
 }
 
+ul {
+  list-style: disc; /* または circle, square など */
+  padding-left: 20px; /* 適切なインデントを追加 */
+  margin-left: 0; /* 必要に応じてマージンも調整 */
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
