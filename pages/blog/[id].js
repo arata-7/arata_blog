@@ -4,7 +4,7 @@ import styles from "../../styles/Home.module.scss"
 
 export default function BlogId({ blog }) {
   return (
-    <main>
+    <main className={styles.main}>
       <h1 className={styles.title}>{blog.title}</h1>
       <p className={styles.puplishedAt}>{blog.publishedAt}</p>
       <div
