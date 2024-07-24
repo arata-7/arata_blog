@@ -1,7 +1,7 @@
 //components/Pagination.js
 import Link from 'next/link';
 
-export const Pagination = ({ totalCount }) => {
+export const Pagination = ({ 20 }) => {
   const PER_PAGE = 5;
 
   const range = (start, end) =>
