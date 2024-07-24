@@ -12,13 +12,13 @@ export function Pagination({ totalCount, currentPage }) {
   return (
     <div>
       {prevPage && (
-        <Link href={`/blog/page/${prevPage}`}>
-          <a>Previous</a>
+        <Link href={`/page/${prevPage}`}>
+          Previous
         </Link>
       )}
       {nextPage && (
-        <Link href={`/blog/page/${nextPage}`}>
-          <a>Next</a>
+        <Link href={`/page/${nextPage}`}>
+          Next
         </Link>
       )}
     </div>
