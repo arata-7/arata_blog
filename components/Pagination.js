@@ -1,19 +1,26 @@
-//components/Pagination.js
-import Link from 'next/link';
+import Link from "next/link";
 
-export const Pagination = ({ totalCount }) => {
+export function Pagination({ totalCount, currentPage }) {
   const PER_PAGE = 5;
+  const totalPages = Math.ceil(totalCount / PER_PAGE);
 
-  const range = (start, end) =>
-        [...Array(end - start + 1)].map((_, i) => start + i)
+  if (totalPages <= 1) return null; // ページネーションが不要な場合は表示しない
+
+  const prevPage = currentPage > 1 ? currentPage - 1 : null;
+  const nextPage = currentPage < totalPages ? currentPage + 1 : null;
 
   return (
-    <ul>
-      {range(1, Math.ceil(totalCount / PER_PAGE)).map((number, index) => (
-        <li key={index}>
-          <Link href={`/blog/page/${number}`}>{number}</Link>
-        </li>
-      ))}
-    </ul>
+    <div>
+      {prevPage && (
+        <Link href={`/blog/page/${prevPage}`}>
+          <a>Previous</a>
+        </Link>
+      )}
+      {nextPage && (
+        <Link href={`/blog/page/${nextPage}`}>
+          <a>Next</a>
+        </Link>
+      )}
+    </div>
   );
-};
+}
